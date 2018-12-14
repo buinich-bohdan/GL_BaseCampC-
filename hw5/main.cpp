@@ -2,7 +2,6 @@
 
 int main(int argc, char const* argv[])
 {
-
     Port* a = new VintagePort();
     a->Show();
     std::cout << "______________________" << std::endl;

@@ -19,7 +19,6 @@ Port::Port(const char* br, const char* st, int b)
 Port::Port(const Port& p)
     : bottles(p.bottles)
 {
-    std::cout << "copy" << std::endl;
     brand = new char[strlen(p.brand)];
     strcpy(brand, p.brand);
     strncpy(style, p.style, 20);
@@ -27,13 +26,11 @@ Port::Port(const Port& p)
 
 Port::~Port()
 {
-    std::cout << "dest" << std::endl;
     delete[] brand;
 }
 
 Port& Port::operator=(const Port& p)
 {
-    std::cout << "operator=" << std::endl;
     if (this != &p)
         if (brand)
             delete[] brand;

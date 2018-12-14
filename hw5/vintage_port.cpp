@@ -33,7 +33,6 @@ VintagePort::~VintagePort()
 
 VintagePort& VintagePort::operator=(const VintagePort& vp)
 {
-    std::cout << "operator= " << std::endl;
     if (this != &vp) {
         delete[] brand;
         delete[] nickname;
