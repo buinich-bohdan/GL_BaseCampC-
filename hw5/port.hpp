@@ -1,24 +1,26 @@
-
 #pragma once
 
 #include <iostream>
+#include <cstring>
 
 class Port {
-private:
+protected:
     char* brand;
     char style[20]; // e.g. tawny, ruby, vintage
     int bottles;
 
 public:
     Port(const char* br = "none", const char* st = "none", int b = 0);
-    Port(const Port& p);
-    virtual ~Port() { delete [] brand; }
+    Port(const Port&);
+    virtual ~Port();
 
-    Port& operator= (const Port & p);
-    Port& operator+= (int b) ; // adds b to bottles
-    Port& operator-= (int b); // subtracts b from bottles, if possible
+    Port& operator=(const Port&);
+    Port& operator+=(int); // adds b to bottles
+    Port& operator-=(int); // subtracts b from bottles, if possible
 
-    int BottleCount() const { return bottles; }
+    int BottleCount() const;
     virtual void Show() const;
-    friend std::ostream& operator<< (std::ostream& os, const Port& p);
+    friend std::ostream& operator<<(std::ostream&, const Port&);
 };
+
+std::ostream& operator<<(std::ostream&, const Port&);
