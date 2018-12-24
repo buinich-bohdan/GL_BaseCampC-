@@ -47,12 +47,12 @@ Employee::Employee(const std::string& fn, const std::string& ln, const std::stri
 
 void Employee::showAll() const
 {
-    this->AbstractEmployee::showAll();
+    AbstractEmployee::showAll();
 }
 
 void Employee::setAll()
 {
-    this->AbstractEmployee::setAll();
+    AbstractEmployee::setAll();
 }
 
 Manager::Manager()
@@ -155,7 +155,7 @@ HighFink::HighFink(const Manager& m, const std::string& rpo)
 
 HighFink::HighFink(const HighFink& h) :AbstractEmployee(static_cast<const AbstractEmployee&>(h)) ,Fink(static_cast<const Fink&>(h)), Manager(static_cast<const Manager&>(h))
 {
- 
+
 }
 
 void HighFink::showAll() const
