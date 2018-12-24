@@ -135,6 +135,7 @@ HighFink::HighFink()
 HighFink::HighFink(const std::string& fn, const std::string& ln, const std::string& j, const std::string& rpo, int ico)
     : AbstractEmployee(fn, ln, j)
 {
+
     Fink::setReportsTo(rpo);
     Manager::setInChargeOf(ico);
 }
@@ -152,10 +153,9 @@ HighFink::HighFink(const Manager& m, const std::string& rpo)
     Fink::setReportsTo(rpo);
 }
 
-HighFink::HighFink(const HighFink& h)
+HighFink::HighFink(const HighFink& h) :AbstractEmployee(static_cast<const AbstractEmployee&>(h)) ,Fink(static_cast<const Fink&>(h)), Manager(static_cast<const Manager&>(h))
 {
-    Fink(static_cast<const Fink&>(h));
-    Manager(static_cast<const Manager&>(h));
+ 
 }
 
 void HighFink::showAll() const
